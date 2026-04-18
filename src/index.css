@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    @apply font-sans text-brand-dark antialiased;
+    background-color: #F5FBFF;
+  }
+  h1,h2,h3,h4,h5,h6 { @apply font-sans font-bold tracking-tight; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-brand-orange text-white font-semibold rounded-xl
+           hover:bg-brand-orange-d active:scale-95 transition-all duration-200 shadow-lg shadow-orange-200
+           focus:outline-none focus:ring-2 focus:ring-brand-orange focus:ring-offset-2;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-white text-brand-blue font-semibold rounded-xl
+           border border-brand-blue/20 hover:border-brand-blue hover:bg-brand-light
+           active:scale-95 transition-all duration-200;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-4 py-2 text-brand-blue font-medium rounded-lg
+           hover:bg-brand-blue/5 active:scale-95 transition-all duration-200;
+  }
+  .card {
+    @apply bg-white rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300;
+  }
+  .section-title {
+    @apply text-3xl md:text-4xl font-extrabold text-brand-dark leading-tight;
+  }
+  .section-subtitle {
+    @apply text-brand-gray text-lg mt-3 max-w-2xl;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm font-semibold;
+  }
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  .gradient-text {
+    @apply bg-gradient-to-r from-brand-blue to-brand-teal bg-clip-text text-transparent;
+  }
+}
+
+/* Swiper custom */
+.swiper-pagination-bullet-active { background: #1054A0 !important; }
+.swiper-button-next, .swiper-button-prev {
+  color: #1054A0 !important;
+  background: white;
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.swiper-button-next::after, .swiper-button-prev::after {
+  font-size: 14px !important;
+  font-weight: 700;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #E0F5FD; }
+::-webkit-scrollbar-thumb { background: #00AEEF; border-radius: 3px; }
+
+/* Selection */
+::selection { background: #00AEEF; color: white; }
